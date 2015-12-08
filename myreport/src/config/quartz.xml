@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+     <!-- 绩效报表定时任务 -->
+     <!--<bean id="performanceJob" class="com.xi.sync.task.RptRoomPerformanceTask"></bean>-->
+     <!--&lt;!&ndash; 定义调用对象和调用对象的方法 &ndash;&gt;-->
+     <!--<bean id="performanceJobtask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+         <!--&lt;!&ndash; 调用的类 &ndash;&gt;-->
+         <!--<property name="targetObject">-->
+             <!--<ref bean="performanceJob"/>-->
+         <!--</property>-->
+         <!--&lt;!&ndash; 调用类中的方法 &ndash;&gt;-->
+         <!--<property name="targetMethod">-->
+             <!--<value>performanceTask</value>-->
+         <!--</property>-->
+     <!--</bean>-->
+     <!--&lt;!&ndash; 定义触发时间 &ndash;&gt;-->
+     <!--<bean id="triggerPerformanceJob" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+         <!--<property name="jobDetail" >-->
+             <!--<ref bean="performanceJobtask"/>-->
+         <!--</property>-->
+         <!--&lt;!&ndash; cron表达式 &ndash;&gt;-->
+         <!--<property name="cronExpression">-->
+<!--&lt;!&ndash;           	 <value>00 30 05 1 * ?</value>  &ndash;&gt;-->
+				<!--<value>00 20 21 21 * ?</value>-->
+         <!--</property>-->
+     <!--</bean>-->
+
+     <!--绩效报表定时任务配置任务结束  -->
+     <bean id="startQuertz" lazy-init="true" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+<!--          <property name="triggers">-->
+<!--              <list>-->
+<!--                  <ref bean="triggerRoomIncomeJob"/>-->
+<!--                  <ref bean="triggerPerformanceJob"/>-->
+<!--                  <ref bean="triggerareaCostJob"/>-->
+<!--              </list>-->
+<!--          </property>-->
+<!--          <property name="quartzProperties"> -->
+<!--              <map> -->
+<!--                      <entry key="org.quartz.threadPool.threadCount" value="1"/> -->
+<!--              </map> -->
+<!--     	  </property>-->
+      </bean>
+</beans>
